@@ -2,10 +2,15 @@
 <%--java.sql 패키지가 여러개 사용될 예정이라 * 처리 --%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
+    
+<%--회원가입 폼의 데이터를 db에 추가 --%>
+
 
 <% request.setCharacterEncoding("utf-8"); %>
 <%
 	//오라클 데이터베이스 member테이블에 사용자가 입력하는 데이터 저장 목적으로 존재-> tag 필요 x
+	//getParameter의 리턴타입이 String
 	String userId = request.getParameter("userId");
 	String passwd = request.getParameter("passwd");
 	String username = request.getParameter("username");
@@ -17,19 +22,22 @@
 	Connection conn = null;
 	//sql구문
 	PreparedStatement pstmt = null;
-	String str = "";
 	
 	try {
 		//데이터베이스 연결정보
 		String url ="jdbc:oracle:thin:@localhost:1521:xe";
+		//@localhost 부분이 실무에서 변경될 것. 현재는 같은 컴퓨터에 jdbc, oracle jdk 등등 다 있어서 지들끼리 함
+		//xe : sid 중 하나
 		String id ="ezen";
 		String password = "1234";
 		
 		Class.forName("oracle.jdbc.OracleDriver");
+		//DriverManager 객체가 메모리상에 생성
 		
 		//1)conn객체 생성
 		conn=DriverManager.getConnection(url, id, password);
 		//conn객체가 생성이 되면 오라클db에 연결됐음을 의미
+		//conn에서 에러가 나면 getConnection의 파라미터가 잘못된 것!
 		
 		//out.println("연결성공"); 확인용
 		
@@ -38,7 +46,7 @@
 		
 		//2)pstmt 객체 생성
 		pstmt = conn.prepareStatement(sql);
-		//5개의 ?에 대치될 값을 지정
+		//5개의 ?에 대치될 값을 할당
 		//컬럼의 값을 지정 시 set타입이름() 메소드가 존재
 		//pstmt.setString(parameterIndex, x)
 		pstmt.setString(1, userId);
@@ -58,6 +66,7 @@
 		
 	} catch(Exception e) {
 		e.printStackTrace();
+		//예외정보를 콜솔에서 확인
 		out.println("member테이블에 레코드 삽입 실패");
 	} finally {
 		//예외 발생 여부와 상관없이 반드시 실행시킬 구문 작성
@@ -70,5 +79,5 @@
 			try{conn.close();} catch(Exception e) {}
 	}
 	
-	response.sendRedirect("selectList.jsp");
+	response.sendRedirect("insertSelectList.jsp");
 %>

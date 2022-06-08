@@ -16,7 +16,6 @@
 	Connection conn = null;
 	//sql구문
 	PreparedStatement pstmt = null;
-	String str = "";
 	
 	try {
 		//데이터베이스 연결정보
@@ -64,5 +63,5 @@
 			try{conn.close();} catch(Exception e) {}
 	}
 	
-	response.sendRedirect("selectList.jsp");
+	response.sendRedirect("updateSelectList.jsp");
 %>

@@ -37,6 +37,6 @@
 	}
 	
 	//selectList.jsp로 돌아가기
-	response.sendRedirect("selectList.jsp");
+	response.sendRedirect("deleteSelectList.jsp");
 
 %>

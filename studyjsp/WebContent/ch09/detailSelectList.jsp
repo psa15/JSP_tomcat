@@ -3,14 +3,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
-<script>
-	function fn_deleteOk(userid) {
-		location.href="deletePro.jsp?userid=" + userid;
-	}
-	function fn_update(userid) {
-		location.href="updateForm.jsp?userid=" + userid;
-	}
-</script>
 <%--데이터들을 테이블형태로 출력하기 위해 --%>
 <table border="1">
 	<tr>
@@ -18,7 +10,6 @@
 		<td>이름</td>
 		<td>전화번호</td>
 		<td>가입 일자</td>
-		<td>비고</td>
 	</tr>
 	
 <%
@@ -59,7 +50,7 @@
 		//rs.next() : 커서를 다음 줄로 이동, 이동된 위치에 데이터가 존재하면 true 반환
 		while (rs.next()) {
 			//rs객체의 커서가 헤더에 존재하는 상태에서 next()메소드에 의하여 다음위치로 이동되고 데이터 존재 유무를 확인
-			String userid = rs.getString("userid"); //rs.getString("컬럼명");
+			String userId = rs.getString("userid"); //rs.getString("컬럼명");
 			//String passwd = rs.getString("passwd");
 			String username = rs.getString("username");
 			//String addr = rs.getString("addr");
@@ -70,14 +61,10 @@
 			
 %>
 	<tr>
-		<td><a href ="selectDetail.jsp?userid=<%=userid%>"><%=userid %></a></td>
+		<td><a href ="selectDetail.jsp?userid=<%=userId%>"><%=userId %></a></td>
 		<td><%=username %></td>
 		<td><%=tel %></td>
 		<td><%=reg_date %></td>
-		<td>
-			<input type="button" value="삭제" onclick="fn_deleteOk('<%=userid%>');">
-			<input type="button" value="수정" onclick="fn_update('<%=userid%>');">
-		</td>
 	</tr>
 <%
 		}

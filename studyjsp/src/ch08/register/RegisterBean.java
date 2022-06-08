@@ -3,6 +3,7 @@ package ch08.register;
 import java.sql.Timestamp;
 
 /*
+ 자바빈 : 데이터 저장 및 관리 목적 
   회원테이블 참조
   userId, passwd, name, reg_date 컬럼 존재
  */

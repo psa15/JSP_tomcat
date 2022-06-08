@@ -77,11 +77,11 @@
 		</dd>
 		<dd>
 			<label for="tel">연락처</label>
-			<input type="text" name="tel" id="tel" value="<%=d_tel %>" readonly>
+			<input type="text" name="tel" id="tel" value="<%=d_tel %>" required>
 		</dd>
 		<dd>
 			<label for="reg_date">등록 일자</label>
-			<input type="text" name="reg_date" id="reg_date" value="<%=d_reg_date %>" readonly>
+			<input type="text" name="reg_date" id="reg_date" value="<%=d_reg_date %>" required>
 		</dd>
 	</dl>
 </body>
