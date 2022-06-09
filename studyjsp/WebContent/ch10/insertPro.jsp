@@ -29,5 +29,5 @@
 
 <script>
 	alert("회원가입이 완료되었습니다.");
-	location.href = "deleteSelectList.jsp"
+	location.href = "selectList.jsp"
 </script>

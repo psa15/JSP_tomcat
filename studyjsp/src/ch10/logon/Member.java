@@ -2,7 +2,7 @@ package ch10.logon;
 
 import java.util.Date;
 
-//ezen계정의 Member테이블을 기본 베이스로
+//ezen계정의 Member테이블을 기본 베이스로 - 변수로만
 public class Member {
 	//userid, PASSWD, USERNAME, ADDR, TEL, REG_DATE
 	private String userid;
@@ -50,7 +50,7 @@ public class Member {
 		REG_DATE = rEG_DATE;
 	}
 	
-	//reg_date제외 생성자 메소드 생성
+	//생성자메소드
 	public Member(String userid, String pASSWD, String uSERNAME, String aDDR, String tEL, Date reg_date) {
 		super();
 		this.userid = userid;

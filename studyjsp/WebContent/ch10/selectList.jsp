@@ -12,6 +12,10 @@
 		//확인을 누르면 true가 되어 !로 인해 false로 작용하여 아리 코드 실행
 		location.href="deletePro.jsp?userid=" + userid;
 	}
+	//수정 함수
+	function fn_update(userid) {
+		location.href="updateForm.jsp?userid=" + userid;
+	}
 </script>
 
 <table border="1">
@@ -45,10 +49,10 @@
 	<tr>
 		<td><a href ="selectDetail.jsp?userid=<%=userid%>"><%=userid %></a></td>
 		<td><%=username %></td>
-		<td><%=tel %></td>
 		<td><%=reg_date %></td>
 		<td>
 			<input type="button" value="삭제" onclick="fn_deleteOk('<%=userid%>');">
+			<input type="button" value="수정" onclick="fn_update('<%=userid%>');">
 		</td>
 	</tr>
 

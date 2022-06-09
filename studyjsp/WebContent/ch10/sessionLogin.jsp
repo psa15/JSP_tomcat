@@ -28,6 +28,7 @@
 					</dd>
 					<dd>
 						<input type="submit" value="로그인">
+						<input type = "button" value = "회원가입" onclick="location.href='insertForm.jsp'">
 					</dd>
 				</dl>
 			</div>
