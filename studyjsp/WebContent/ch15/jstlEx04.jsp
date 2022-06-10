@@ -13,6 +13,7 @@
 		<%--token: 데이터의 가장 작은 단위
 			delims : items(배열) 사이에 있는 구분자 --%>
 		<p>skill: <c:out value="${course}" /> </p>
+		<%--out태그는 보안적인 이유로 사용(ex. 특수문자가 깨지는 것을 방지(?))  --%>
 	</c:forTokens>
 </body>
 </html>

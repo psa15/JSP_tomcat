@@ -17,6 +17,7 @@
 			<li>
 				<label for = "name">이름</label>
 				<input type = "text" id = "name" name = "name" value = "${param['name']}">
+				<%--request.getParameter()와 같은 의미 --%>
 				<input type = "submit" value = "확인">
 			</li>
 			<li>

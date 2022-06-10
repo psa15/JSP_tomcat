@@ -11,7 +11,7 @@
 <body>
 	<h3>JSTL Core 태그예제- if, choose, when, otherwise </h3>
 	
-	<%--if 문 : else 지원 x -> if문의 반대되는 식으로 사용 --%>
+	<%--if 문 : else 지원 x -> if문의 반대되는 조건식으로 사용 --%>
 	<c:set var="country" value="${'Korea'}" />
 	<c:if test="${country != null }">
 		<%--country != null : country에 값이 있다면 / country 변수가 정의가 되어 있으면 --%>

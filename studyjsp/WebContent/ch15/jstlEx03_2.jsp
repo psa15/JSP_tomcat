@@ -21,12 +21,14 @@
 	</c:forEach>
 	
 	<%--사용법 2 --%>
-	<c:forEach var="str" items="${menu}"> <%--${requestScope.menu} --%>
+	<c:forEach var="str" items="${menu}"> 
+		<%--${requestScope.menu}, 
+			items : 배열이나 컬렉션 -> 스프링에서는 자바에서 만든 걸 참조 --%>
 		<p><c:out value="${str}" /></p>
 	</c:forEach>
 	
 	<h3>varStatus : count</h3>
-	<c:forEach var="str" items="${menu}" varStatus="status"> <%--varStatus:변수의 상태 --%>
+	<c:forEach var="str" items="${menu}" varStatus="status"> <%--varStatus:변수의 상태를 체크 --%>
 		<c:if test="${status.first}">
 			<%--for문이 처음 돌면 --%>
 			시작
